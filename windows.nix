@@ -1,3 +1,4 @@
+# https://github.com/jraygauthier/jrg-rust-cross-experiment/tree/master/simple-static-rustup-target-windows
 {pkgs ? import <nixpkgs> {}}: let
   rustupToolchain = "stable-2024-11-28";
 
