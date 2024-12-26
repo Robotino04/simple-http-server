@@ -21,3 +21,8 @@ Cargo.lock
 #.idea/
 
 .env
+
+# nix shell things
+.cargo/
+.wine/
+.rustup/
