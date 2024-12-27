@@ -44,7 +44,7 @@ async fn main() {
     let server = warp::serve(files.or(env))
         .run(([0, 0, 0, 0], port));
 
-    let url_to_open = std::format!("http://0.0.0.0:{port}/{initial_path}");
+    let url_to_open = std::format!("http:/localhost:{port}/{initial_path}");
     println!("Opening '{url_to_open}' in browser.");
     open::that(url_to_open).expect("Failed to open browser");
 
