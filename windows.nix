@@ -1,6 +1,6 @@
 # https://github.com/jraygauthier/jrg-rust-cross-experiment/tree/master/simple-static-rustup-target-windows
 {pkgs ? import <nixpkgs> {}}: let
-  rustupToolchain = "stable-2024-11-28";
+  rustupToolchain = "stable-2025-08-07";
 
   rustBuildTargetTriple = "x86_64-pc-windows-gnu";
   rustBuildHostTriple = "x86_64-unknown-linux-gnu";
@@ -16,7 +16,7 @@
   # the required libraries and headers.
   mingw_w64_cc = pkgs-cross-mingw.stdenv.cc;
   mingw_w64 = pkgs-cross-mingw.windows.mingw_w64;
-  mingw_w64_pthreads_w_static = pkgs-cross-mingw.windows.mingw_w64_pthreads.overrideAttrs (oldAttrs: {
+  mingw_w64_pthreads_w_static = pkgs-cross-mingw.windows.pthreads.overrideAttrs (oldAttrs: {
     # TODO: Remove once / if changed successfully upstreamed.
     configureFlags =
       (oldAttrs.configureFlags or [])
